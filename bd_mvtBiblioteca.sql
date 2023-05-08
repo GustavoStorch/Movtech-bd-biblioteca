@@ -14,4 +14,7 @@ create table mvtBibEditora(
 	nomeEditora varchar(50) not null
 );
 
-drop table mvtBibEditora;
+create table mvtBibLocal(
+	codLocal int identity primary key,
+	descricaoLocal varchar(50) not null
+);
