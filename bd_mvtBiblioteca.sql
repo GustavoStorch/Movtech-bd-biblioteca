@@ -18,3 +18,8 @@ create table mvtBibLocal(
 	codLocal int identity primary key,
 	descricaoLocal varchar(50) not null
 );
+
+create table mvtBibSecao(
+	codSecao int identity primary key,
+	descricaoSecao varchar(50) not null
+);
