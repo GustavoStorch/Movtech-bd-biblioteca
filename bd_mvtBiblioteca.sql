@@ -58,7 +58,7 @@ create table mvtBibItemAcervo(
 	nomeLocal varchar(50) not null,
 	volume int,
 	anoEdicao int,
-	localização varchar(50) not null,
+	localizacao varchar(50) not null,
 	codSecao int not null,
 	secao varchar(50),
 	idioma varchar(50),
@@ -66,4 +66,22 @@ create table mvtBibItemAcervo(
 	foreign key(codAutor) references mvtBibAutor(codAutor),
 	foreign key(codEditora) references mvtBibEditora(codEditora),
 	foreign key(codSecao) references mvtBibSecao(codSecao)
+);
+
+create table mvtBibLeitor(
+	codLeitor int identity primary key,
+	nomeLeitor varchar(200) not null,
+	sexo varchar(1) not null,
+	dataNascimento datetime not null,
+	cpf varchar(14),
+	rg varchar(9),
+	email varchar(200),
+	telefone varchar(14),
+	telefoneCelular varchar(14),
+	endereco varchar(200) not null,
+	enderecoBairro varchar(100) not null,
+	enderecoCidade varchar(100) not null,
+	enderecoCep varchar(9),
+	enderecoUf varchar(2) not null,
+	enderecoNumero varchar(10)
 );
