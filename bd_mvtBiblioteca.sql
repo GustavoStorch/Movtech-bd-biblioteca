@@ -77,3 +77,28 @@ create table mvtBibLeitor(
 );
 
 select * from mvtBibLeitor;
+
+create table mvtBibItemAcervo2(
+	codItem int identity primary key,
+	codLocal int not null,
+	numExemplar int not null,
+	nome varchar(200) not null,
+	codAutor int not null,
+	nomeAutor varchar(50) not null,
+	codEditora int not null,
+	nomeEditora varchar(50) not null,
+	tipoItem varchar(50) not null,
+	nomeLocal varchar(50) not null,
+	volume int,
+	anoEdicao int,
+	localizacao varchar(50) not null,
+	codSecao int not null,
+	secao varchar(50),
+	nomeColecao varchar(50),
+	statusItem varchar(50),
+	primary key(numExemplar);
+	foreign key(codLocal) references mvtBibLocal(codLocal),
+	foreign key(codAutor) references mvtBibAutor(codAutor),
+	foreign key(codEditora) references mvtBibEditora(codEditora),
+	foreign key(codSecao) references mvtBibSecao(codSecao)
+);
