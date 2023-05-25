@@ -87,10 +87,16 @@ create table mvtBibReserva(
 	localizacao varchar(50) not null,
 	codLeitor int not null,
 	nomeLeitor varchar(200) not null,
-	dataReserva date not null,
-	prazoReserva date not null,
+	dataReserva datetime not null,
+	prazoReserva datetime not null,
 	encerrar bit,
 	tipoMovimento varchar(50),
 	foreign key(codItem) references mvtBibItemAcervo(codItem),
 	foreign key(codLeitor) references mvtBibLeitor(codLeitor)
 );
+
+select * from mvtBibItemAcervo;
+
+drop table mvtBibReserva;
+
+select * from mvtBibReserva;
