@@ -79,6 +79,7 @@ create table mvtBibLeitor(
 select * from mvtBibLeitor;
 
 create table mvtBibReserva(
+	codReserva int identity primary key,
 	codItem int not null,
 	statusItem varchar(50) not null,
 	nomeItem varchar(200) not null,
@@ -89,7 +90,6 @@ create table mvtBibReserva(
 	nomeLeitor varchar(200) not null,
 	dataReserva datetime not null,
 	prazoReserva datetime not null,
-	encerrar bit,
 	tipoMovimento varchar(50),
 	foreign key(codItem) references mvtBibItemAcervo(codItem),
 	foreign key(codLeitor) references mvtBibLeitor(codLeitor)
