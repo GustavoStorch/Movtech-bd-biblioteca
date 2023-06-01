@@ -95,6 +95,13 @@ create table mvtBibReserva(
 	foreign key(codLeitor) references mvtBibLeitor(codLeitor)
 );
 
+create table mvtBibLogin(
+	usuario varchar(15) primary key not null,
+	senha varchar(15) not null
+);
+
+insert into mvtBibLogin(usuario, senha) values('admin', '123');
+
 select * from mvtBibItemAcervo;
 
 drop table mvtBibReserva;
